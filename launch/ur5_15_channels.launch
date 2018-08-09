@@ -16,8 +16,8 @@
     <param name="use_importance_sampling" value="false" />
         
     <!-- What type of point cloud is used and what ROS topic it comes from -->
-    <param name="cloud_type" value="2" /> <!-- 0: PointCloud2, 1: CloudIndexed, 2: CloudSamples -->
-    <param name="cloud_topic" value="/cloud_stitched" />
+    <param name="cloud_type" value="1" /> <!-- 0: PointCloud2, 1: CloudIndexed, 2: CloudSamples -->
+    <param name="cloud_topic" value="/grasp_cloud" />
     
     <!-- (optional) The ROS topic that the samples come from (default: an empty string) -->
     <param name="samples_topic" value="" />
@@ -30,13 +30,14 @@
     <param name="plot_valid_grasps" value="false" />
     <param name="plot_clusters" value="false" />
     <param name="plot_selected_grasps" value="false" />
+    <param name="rviz_topic" value="grasps_rviz" />
     
     <!-- Preprocessing of point cloud -->
-    <param name="voxelize" value="false"/>
+    <param name="voxelize" value="true"/>
     <param name="remove_outliers" value="false"/>
     <!--<rosparam param="workspace"> [0.4, 0.5, 0.00, 0.20, 0, 0.1] </rosparam>-->
     <!--<rosparam param="workspace"> [0.30, 0.90, -0.30, 0.30, -0.12, 0.40] </rosparam>-->
-    <rosparam param="workspace"> [-1, 1, -1, 1, -1, 1] </rosparam>
+    <rosparam param="workspace"> [0, 1, 0, 1, -1, 0] </rosparam>
     <rosparam param="camera_position"> [0, 0, 0] </rosparam>
             
     <!-- General parameters -->
@@ -62,8 +63,8 @@
     <!-- Grasp selection -->
     <param name="min_score_diff" value="50" />
     <param name="min_aperture" value="0.0" />
-    <param name="max_aperture" value="0.085" />
-    <param name="num_selected" value="100" />
+    <param name="max_aperture" value="0.14" />
+    <param name="num_selected" value="50" />
         
 	</node>
   

@@ -17,7 +17,7 @@
         
     <!-- What type of point cloud is used and what ROS topic it comes from -->
     <param name="cloud_type" value="0" /> <!-- 0: PointCloud2, 1: CloudSized, 2: CloudIndexed, 3: CloudSamples -->
-    <param name="cloud_topic" value="/camera/depth_registered/points" />
+    <param name="cloud_topic" value="/table_cloud" />
     
     <!-- (optional) The ROS topic that the samples come from (default: an empty string) -->
     <param name="samples_topic" value="" />
@@ -33,14 +33,14 @@
     <param name="rviz_topic" value="grasps_rviz" />
     
     <!-- Preprocessing of point cloud -->
-    <param name="voxelize" value="true"/>
+    <param name="voxelize" value="false"/>
     <param name="remove_outliers" value="false"/>
-    <rosparam param="workspace"> [-1, 1, -1, 1, -1, 1] </rosparam>
+    <rosparam param="workspace"> [0, 1, 0, 1, -1, 0] </rosparam>
     <rosparam param="camera_position"> [0, 0, 0] </rosparam>
             
     <!-- General parameters -->
     <param name="num_samples" value="100" />
-    <param name="num_threads" value="4" />
+    <param name="num_threads" value="5" />
     
     <!-- Parameters for local grasp candidate search -->
     <param name="nn_radius" value="0.01" />
@@ -61,8 +61,8 @@
     <!-- Grasp selection -->
     <param name="min_score_diff" value="0" />
     <param name="min_aperture" value="0.029" />
-    <param name="max_aperture" value="0.072" />
-    <param name="num_selected" value="5" />
+    <param name="max_aperture" value="0.2" />
+    <param name="num_selected" value="10" />
         
 	</node>
   
